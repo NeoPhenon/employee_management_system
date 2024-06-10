@@ -5,15 +5,36 @@ Guilefully intriguing
     <ul>
       <li>
         <a>Spring Boot</a>
-         <a>Spring Security</a>
-         <a>Spring Validation</a>
-        <a>Spring Logging</a>
+      </li>
+        <li>
+       <a>Spring Security</a>
+      </li>
+        <li>
+        <a>Spring Validation</a>
+      </li>
+        <li>
+         <a>Spring Logging</a>
+      </li>
+        <li>
         <a>Thymeleaf</a>
+      </li>
+     <li>
         <a>Lombok</a>
+      </li>
+       <li>
         <a>JDBC for Connection</a>
+      </li>
+       <li>
         <a>myBatis Framework</a>
-        <a>Postgres Driver + Database</a>
+      </li>
+       <li>
+         <a>Postgres Driver + Database</a>
       </li>
     </ul>
    </article>
   </html>
+
+
+
+       
+       
