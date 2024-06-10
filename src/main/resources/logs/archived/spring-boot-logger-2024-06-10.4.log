@@ -1,0 +1,22 @@
+2024-06-10_00:18:47.075 - Tomcat initialized with port(s): 8080 (http)
+2024-06-10_00:18:47.094 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:18:47.097 - Starting service [Tomcat]
+2024-06-10_00:18:47.097 - Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-06-10_00:18:47.481 - Initializing Spring embedded WebApplicationContext
+2024-06-10_00:18:47.481 - Root WebApplicationContext: initialization completed in 1967 ms
+2024-06-10_00:18:48.291 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7eae3764, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10dc7d6, org.springframework.security.web.context.SecurityContextPersistenceFilter@65c86db8, org.springframework.security.web.header.HeaderWriterFilter@481e91b6, org.springframework.security.web.authentication.logout.LogoutFilter@706fe5c6, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@52169758, org.springframework.security.web.session.ConcurrentSessionFilter@3dd818e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ac20bb4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ca8d498, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@6b4283c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f668f29, org.springframework.security.web.session.SessionManagementFilter@140d1230, org.springframework.security.web.access.ExceptionTranslationFilter@6631cb64, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@50756c76]
+2024-06-10_00:18:48.835 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:18:48.863 - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-10_00:18:48.878 - Started EmployeeManagementSystemApplication in 4.074 seconds (JVM running for 5.189)
+2024-06-10_00:19:54.275 - Application shutdown requested.
+2024-06-10_00:19:54.430 - Pausing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:19:54.431 - Stopping service [Tomcat]
+2024-06-10_00:19:54.439 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:19:54.443 - Destroying ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:23:20.999 - HV000001: Hibernate Validator 6.2.5.Final
+2024-06-10_00:23:21.022 - Starting EmployeeManagementSystemApplication using Java 1.8.0_202 on DESKTOP-0FGFVV5 with PID 7864 (C:\Users\Acer\eclipse-workspace\Neo provocative and enervating process\employee_management_system.zip_expanded\employee_management_system\target\classes started by Acer in C:\Users\Acer\eclipse-workspace\Neo provocative and enervating process\employee_management_system.zip_expanded\employee_management_system)
+2024-06-10_00:23:21.022 - Running with Spring Boot v2.7.17, Spring v5.3.30
+2024-06-10_00:23:21.023 - No active profile set, falling back to 1 default profile: "default"
+2024-06-10_00:23:22.726 - Tomcat initialized with port(s): 8080 (http)
+2024-06-10_00:23:22.740 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:23:22.743 - Starting service [Tomcat]

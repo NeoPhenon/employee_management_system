@@ -1,0 +1,27 @@
+2024-06-10_00:13:05.196 - Tomcat initialized with port(s): 8080 (http)
+2024-06-10_00:13:05.224 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:13:05.227 - Starting service [Tomcat]
+2024-06-10_00:13:05.227 - Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-06-10_00:13:05.420 - Initializing Spring embedded WebApplicationContext
+2024-06-10_00:13:05.421 - Root WebApplicationContext: initialization completed in 1851 ms
+2024-06-10_00:13:06.101 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@10dc7d6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f668f29, org.springframework.security.web.context.SecurityContextPersistenceFilter@7efe7b87, org.springframework.security.web.header.HeaderWriterFilter@7c8f9c2e, org.springframework.security.web.authentication.logout.LogoutFilter@6c15e8c7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3eda0aeb, org.springframework.security.web.session.ConcurrentSessionFilter@4cb40e3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a2bd7c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7187bac9, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@d0865a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@716e431d, org.springframework.security.web.session.SessionManagementFilter@3cbf1ba4, org.springframework.security.web.access.ExceptionTranslationFilter@19962194, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@38aafb53]
+2024-06-10_00:13:06.593 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:13:06.621 - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-10_00:13:06.634 - Started EmployeeManagementSystemApplication in 3.766 seconds (JVM running for 4.651)
+2024-06-10_00:13:46.322 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-10_00:13:46.322 - Initializing Servlet 'dispatcherServlet'
+2024-06-10_00:13:46.325 - Completed initialization in 2 ms
+2024-06-10_00:13:46.399 - HikariPool-1 - Starting...
+2024-06-10_00:13:46.705 - HikariPool-1 - Start completed.
+2024-06-10_00:13:46.716 - ==>  Preparing: SELECT users.username , users.password , users.enabled , authorities.authority FROM users INNER JOIN authorities ON users.username = authorities.username WHERE users.username = ?
+2024-06-10_00:13:46.731 - ==> Parameters: Neo(String)
+2024-06-10_00:13:46.753 - <==    Columns: username, password, enabled, authority
+2024-06-10_00:13:46.754 - <==        Row: Neo, $2y$10$rCBMgLBYH.vC2I5GCOJEFePo643nLKNtonS7sMbCyl7oXqUxy3QJm, t, ADMIN
+2024-06-10_00:13:46.758 - <==      Total: 1
+2024-06-10_00:13:46.884 - ==>  Preparing: SELECT id,first_name,last_name,email,phone_number,job_title,salary FROM EmployeeDatas
+2024-06-10_00:13:46.884 - ==> Parameters: 
+2024-06-10_00:13:46.888 - <==    Columns: id, first_name, last_name, email, phone_number, job_title, salary
+2024-06-10_00:13:46.889 - <==        Row: 8, Neo, Masculine, joash@gmail.com, 33333333, Contractor, 500000.00
+2024-06-10_00:13:46.890 - <==        Row: 10, Ye Zaw , Phenon, neo@gmial.com, 09880909, Game Developer, 900000.00
+2024-06-10_00:13:46.891 - <==        Row: 11, Courney, nnn, ney@gmal.com, 99980, fire fighter, 90000.00
+2024-06-10_00:13:46.891 - <==        Row: 12, NeonNeon, neo, email@gmail.com, 090909, Fontend developer, 800000.00

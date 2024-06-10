@@ -1,0 +1,15 @@
+2024-06-10_00:26:08.658 - Tomcat initialized with port(s): 8080 (http)
+2024-06-10_00:26:08.674 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:26:08.678 - Starting service [Tomcat]
+2024-06-10_00:26:08.678 - Starting Servlet engine: [Apache Tomcat/9.0.82]
+2024-06-10_00:26:08.988 - Initializing Spring embedded WebApplicationContext
+2024-06-10_00:26:08.988 - Root WebApplicationContext: initialization completed in 1805 ms
+2024-06-10_00:26:09.700 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@10dc7d6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4f668f29, org.springframework.security.web.context.SecurityContextPersistenceFilter@7efe7b87, org.springframework.security.web.header.HeaderWriterFilter@7c8f9c2e, org.springframework.security.web.authentication.logout.LogoutFilter@6c15e8c7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3eda0aeb, org.springframework.security.web.session.ConcurrentSessionFilter@4cb40e3b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a2bd7c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7187bac9, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@d0865a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@716e431d, org.springframework.security.web.session.SessionManagementFilter@3cbf1ba4, org.springframework.security.web.access.ExceptionTranslationFilter@19962194, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@38aafb53]
+2024-06-10_00:26:10.246 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:26:10.275 - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-10_00:26:10.290 - Started EmployeeManagementSystemApplication in 3.776 seconds (JVM running for 4.67)
+2024-06-10_00:26:14.283 - Application shutdown requested.
+2024-06-10_00:26:14.483 - Pausing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:26:14.484 - Stopping service [Tomcat]
+2024-06-10_00:26:14.490 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:26:14.494 - Destroying ProtocolHandler ["http-nio-8080"]

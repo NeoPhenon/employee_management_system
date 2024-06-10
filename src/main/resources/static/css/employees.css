@@ -1,0 +1,212 @@
+body {
+    background-color: #f0f8ff;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #007bff;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #ffffff !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffffff !important;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.table tbody tr {
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.table tbody tr:hover {
+    background-color: #e9f5ff;
+    transform: scale(1.02);
+}
+
+.table tbody tr td {
+    vertical-align: middle;
+    padding: 15px;
+    text-align: center;
+}
+
+.table tbody tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table tbody tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn-info, .btn-secondary {
+    border: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-info {
+    background-color: #007bff;
+}
+
+.btn-info:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
+
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #007bff;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.view-modal {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.view-modal .modal-body {
+    color: #333;
+}
+
+.employee-detail {
+    margin-bottom: 10px;
+}
+
+.employee-detail label {
+    font-weight: bold;
+    width: 120px; /* Adjust as needed */
+    display: inline-block;
+}
+
+.employee-detail span {
+    display: inline-block;
+    margin-left: 10px;
+    color: #007bff;
+}
+
+.view-modal .modal-footer {
+    background-color: #f0f8ff;
+    border-top: 1px solid #dee2e6;
+}
+
+.delete-modal .modal-header {
+    background-color: #343a40;
+    color: white;
+}
+
+.delete-modal .modal-body {
+    background-color: #212529;
+    color: white;
+}
+
+.delete-modal .modal-footer {
+    background-color: #343a40;
+}
+
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:5px;
+    padding: 20px;
+}
+
+.nav-item #create-btn {
+    color: hsl(203, 100%, 84%);
+    padding: 10px;
+    display: block;
+    cursor: pointer;
+    margin-left: 100vh;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav-item #create-btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    color: #ffffff;
+}
+/** we knuckle up to this warning btn for update btn to make it more appealing*/
+.btn-warning {
+    background-color: #f0ad4e;
+    color: #fff;
+    border-color: #eea236;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-warning:hover {
+    background-color: #ec971f;
+    border-color: #d58512;
+    transform: scale(1.05);
+}
+
+.btn-warning:focus,
+.btn-warning.focus {
+    box-shadow: 0 0 0 0.2rem rgba(240, 173, 78, 0.5);
+}
+.dropdown-menu {
+    background-color: #212529; 
+    color: #ffffff; 
+    border: 1px solid #343a40; 
+}
+
+.dropdown-menu a {
+    color: #ffffff; 
+}
+
+.dropdown-menu a:hover {
+    background-color: #343a40; 
+}
+
+.dropdown-menu .dropdown-divider {
+    border-top: 1px solid #343a40; 
+}
+
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item:active {
+    background-color: #343a40; 
+}

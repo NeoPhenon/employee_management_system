@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "C:\Users\Acer\Desktop\mybatis-3-mapper.dtd">
+
+<mapper namespace = "com.example.employee_management_system.repository.EmployeeRepository">
+	<resultMap type = "Employee" id = "mappedOutForEmployees"> 
+		<id column = "id" property = "id"/>
+		<result column = "first_name" property = "first_name"/>
+		<result column = "last_name" property = "last_name"/>
+		<result column = "email" property = "email"/>
+		<result column = "phone_number" property = "phone_number"/>
+		<result column = "job_title" property = "job_title"/>
+		<result column = "salary" property = "salary"/>
+	</resultMap>
+	
+	<!-- managed to knuckle up on more intricated dynamic query implementations as I think it leads to be more intriguing -->
+	<select id = "getAllEmployees" resultMap = "mappedOutForEmployees"> 
+		 SELECT id,first_name,last_name,email,phone_number,job_title,salary FROM EmployeeDatas
+		 <where>
+            <if test="first_name != null and first_name != ''">
+                AND title LIKE CONCAT('%', #{first_name}, '%')
+            </if>
+            <if test="last_name != null and last_name != ''">
+                AND last_name LIKE CONCAT('%', #{last_name}, '%')
+            </if>
+            <if test="email != null and email != ''">
+                AND email LIKE CONCAT('%', #{email}, '%')
+            </if>
+            <if test="phone_number != null and phone_number != ''">
+                AND phone_number LIKE CONCAT('%', #{phone_number}, '%')
+            </if>
+            <if test="job_title != null and job_title != ''">
+                AND job_title LIKE CONCAT('%', #{job_title}, '%')
+            </if>
+            <if test="salary != null and salary != ''">
+                AND salary LIKE CONCAT('%', #{salary}, '%')
+            </if>
+        </where>
+	</select>
+	<insert id = "insertIntoEmployees" parameterType = "Employee" keyProperty = "id" useGeneratedKeys = "true"> 
+		INSERT INTO EmployeeDatas
+		<trim prefix = "(" suffix = ")" suffixOverrides = ",">
+			<if test = "first_name != null">first_name,</if>
+			<if test = "last_name != null">last_name,</if>
+			<if test = "email != null">email,</if>
+			<if test = "phone_number != null">phone_number,</if>
+			<if test = "job_title != null">job_title,</if>
+			<if test = "salary != null">salary,</if>
+		</trim>
+		<trim prefix = "VALUES (" suffix = ")" suffixOverrides = ",">
+        		<if test="first_name != null">#{first_name},</if>
+            	<if test="last_name != null">#{last_name},</if>
+           		<if test="email != null">#{email},</if>
+           		<if test="phone_number != null">#{phone_number},</if> 		
+           		<if test="job_title != null">#{job_title},</if> 
+           		<if test="salary != null">#{salary},</if> 
+         </trim>
+	</insert>
+	
+	<delete id = "deleteEmployee" parameterType = "int">
+		DELETE FROM EmployeeDatas WHERE id = #{id};
+	</delete>
+	
+	<!-- I intentionally set parameterType to map to allow multiple parameters to be passed by queries-->
+    <select id = "findEmployeeById" parameterType = "map" resultMap = "mappedOutForEmployees">
+        SELECT id,first_name, last_name, email, phone_number, job_title, salary FROM EmployeeDatas WHERE id = #{id};
+    </select>
+    
+    <update id="updateEmployee" parameterType = "Employee">
+    	UPDATE EmployeeDatas 
+    	<set>
+    		<if test = "first_name != null"> first_name = #{first_name},</if>
+    		<if test = "last_name != null"> last_name = #{last_name},</if>
+    		<if test = "email != null"> email = #{email},</if>
+    		<if test = "phone_number != null"> phone_number = #{phone_number},</if>
+    		<if test = "job_title != null"> job_title = #{job_title},</if>
+    		<if test = "salary != null"> salary = #{salary}</if>
+    		WHERE id = #{id}
+    	</set>
+    </update>
+</mapper>

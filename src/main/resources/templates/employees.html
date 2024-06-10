@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<head>
+<meta charset="UTF-8">
+<meta name = "author" title = "NeoCourney">
+<link rel="stylesheet" th:href="@{/css/employees.css}" type = "text/css" title = "Sagagious Intricated Styling"> 
+<title>Employee List</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Employee Management System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/employees}">Employees</a>
+            </li>
+              <li class="nav-item active">
+                <a class="nav-link btn-outline-primary rounded-pill fw-bold me-2" id="create-btn"  th:href="@{/createEmployee}" sec:authorize = "hasRole('ROLE_ADMIN')">Create Employee</a>
+            </li>  
+        </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Account
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/createAccount}">Create Account</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" th:href="@{/logout}" sec:authorize="isAuthenticated()">Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+		
+		<aside th:if = "${success_message}" class = "alert alert-success fade show alert-dismissible" role = "alert">
+			<strong th:text = "${success_message}"></strong>
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</aside>
+		
+		<aside th:if = "${error_message}" class = "alert alert-danger fade show alert-dismissible" role = "alert">
+			<strong th:text = "${error_message}"></strong>
+			 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</aside>
+		
+  <div class="container mt-3">
+    <h1 class="text-center mb-4">Employees</h1>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee : ${employees}">
+                    <td th:text="${employee.first_name}"></td>
+                    <td th:text="${employee.last_name}"></td>
+                    <td th:text="${employee.email}"></td>
+                    <td class = "d-flex align-items-center justify-content-center gap-3">
+                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" th:data-bs-target="'#employeeModal' + ${employee.id}">View Details</button>
+                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" th:data-bs-target="'#deleteModal' + ${employee.id}" aria-label = "delete button" sec:authorize = "hasRole('ROLE_ADMIN')">Delete Employee</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+ <article th:each = "employee : ${employees}">
+         <section class="modal fade" th:id="'employeeModal' + ${employee.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+      <div class="modal-content view-modal">
+    				<div class="modal-header">
+        				<h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+       					 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    				</div>
+    <div class="modal-body">
+       	 <div class="employee-detail">
+            <label>ID:</label>
+            <span th:text="${employee.id}"></span>
+        </div>
+        <div class="employee-detail">
+            <label>First Name:</label>
+            <span th:text="${employee.first_name}"></span>
+        </div>
+        <div class="employee-detail">
+            <label>Last Name:</label>
+            <span th:text="${employee.last_name}"></span>
+        </div>
+        <div class="employee-detail">
+            <label>Email:</label>
+            <span th:text="${employee.email}"></span>
+        </div>
+        <div class="employee-detail">
+            <label>Phone Number:</label>
+            <span th:text="${employee.phone_number}"></span>
+        </div>
+        <div class="employee-detail">
+            <label>Job Title:</label>
+            <span th:text="${employee.job_title}"></span>
+        </div>
+        <div class="employee-detail">
+            <label>Salary:</label>
+            <span th:text="${employee.salary}"></span>
+        </div>
+    </div>
+    <div class="modal-footer">
+    	<a role = "button" class = "btn btn-warning" th:href = "@{'/employees/edit/' + ${employee.id}}" sec:authorize = "hasRole('ROLE_ADMIN')">Edit</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+		</div>
+          </div>
+       </section>
+ </article>
+ 
+ <div th:each = "employee : ${employees}">
+  <div class="modal fade modal-fullscreen" th:id="'deleteModal' + ${employee.id}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content delete-modal">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold text-align-center dark" id="deleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+            </div>
+            <div class="modal-body fw-bold ">
+                Are you sure you want to delete this Employee Datas?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a th:href = "@{'/employees/delete/' + ${employee.id}}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+         
+</body>
+</html>

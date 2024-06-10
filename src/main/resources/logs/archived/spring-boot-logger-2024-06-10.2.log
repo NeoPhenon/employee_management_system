@@ -1,0 +1,45 @@
+2024-06-10_00:13:46.892 - <==        Row: 13, Courney, Win, neo@gmial.com, 43343434, System developer, 33333.00
+2024-06-10_00:13:46.895 - <==      Total: 5
+2024-06-10_00:13:51.619 - ==>  Preparing: DELETE FROM EmployeeDatas WHERE id = ?;
+2024-06-10_00:13:51.622 - ==> Parameters: 8(Integer)
+2024-06-10_00:13:51.635 - <==    Updates: 1
+2024-06-10_00:13:51.636 - Employee Data Eradication Successed! : {}8
+2024-06-10_00:13:51.663 - ==>  Preparing: SELECT id,first_name,last_name,email,phone_number,job_title,salary FROM EmployeeDatas
+2024-06-10_00:13:51.663 - ==> Parameters: 
+2024-06-10_00:13:51.664 - <==    Columns: id, first_name, last_name, email, phone_number, job_title, salary
+2024-06-10_00:13:51.665 - <==        Row: 10, Ye Zaw , Phenon, neo@gmial.com, 09880909, Game Developer, 900000.00
+2024-06-10_00:13:51.665 - <==        Row: 11, Courney, nnn, ney@gmal.com, 99980, fire fighter, 90000.00
+2024-06-10_00:13:51.666 - <==        Row: 12, NeonNeon, neo, email@gmail.com, 090909, Fontend developer, 800000.00
+2024-06-10_00:13:51.667 - <==        Row: 13, Courney, Win, neo@gmial.com, 43343434, System developer, 33333.00
+2024-06-10_00:13:51.668 - <==      Total: 4
+2024-06-10_00:14:26.495 - ==>  Preparing: INSERT INTO users (username , password , enabled) VALUES ( ? , ? , ? );
+2024-06-10_00:14:26.496 - ==> Parameters: Ye Zaw Win(String), $2a$10$rgXJuTxNsqvrJKjgHUN1oOgVTLZKUCr796ZqGDPDlPckMkeVxMdR.(String), false(Boolean)
+2024-06-10_00:14:26.497 - <==    Updates: 1
+2024-06-10_00:14:26.498 - ==>  Preparing: INSERT INTO authorities (username, authority) VALUES ( ? , ? );
+2024-06-10_00:14:26.498 - ==> Parameters: Ye Zaw Win(String), ADMIN(String)
+2024-06-10_00:14:26.509 - <==    Updates: 1
+2024-06-10_00:14:26.510 -  Account created blossomingly : {} Ye Zaw Win
+2024-06-10_00:14:26.517 - ==>  Preparing: SELECT id,first_name,last_name,email,phone_number,job_title,salary FROM EmployeeDatas
+2024-06-10_00:14:26.517 - ==> Parameters: 
+2024-06-10_00:14:26.518 - <==    Columns: id, first_name, last_name, email, phone_number, job_title, salary
+2024-06-10_00:14:26.518 - <==        Row: 10, Ye Zaw , Phenon, neo@gmial.com, 09880909, Game Developer, 900000.00
+2024-06-10_00:14:26.519 - <==        Row: 11, Courney, nnn, ney@gmal.com, 99980, fire fighter, 90000.00
+2024-06-10_00:14:26.520 - <==        Row: 12, NeonNeon, neo, email@gmail.com, 090909, Fontend developer, 800000.00
+2024-06-10_00:14:26.520 - <==        Row: 13, Courney, Win, neo@gmial.com, 43343434, System developer, 33333.00
+2024-06-10_00:14:26.520 - <==      Total: 4
+2024-06-10_00:14:58.826 - Application shutdown requested.
+2024-06-10_00:14:58.993 - Pausing ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:14:58.993 - Stopping service [Tomcat]
+2024-06-10_00:14:58.996 - Destroying Spring FrameworkServlet 'dispatcherServlet'
+2024-06-10_00:14:59.000 - The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2024-06-10_00:14:59.002 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-10_00:14:59.004 - Destroying ProtocolHandler ["http-nio-8080"]
